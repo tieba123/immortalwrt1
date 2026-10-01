@@ -18,3 +18,10 @@
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+# 移除官方源里可能存在的旧版冲突依赖
+rm -rf feeds/packages/net/mosdns
+rm -rf feeds/packages/net/v2ray-geodata
+
+# 拉取最新的 MosDNS v5 源码及配套规则库到 package 目录
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
