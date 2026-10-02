@@ -19,9 +19,9 @@
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
-# 1. 升级 Golang 到 24.x (Go 1.24.x)，解决 mosdns 要求 go >= 1.24.0 的报错
+# 1. 升级 Golang 到 26.x (Go 1.26.x)，解决 mosdns 要求 go >= 1.26.0 的报错
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
 
 # 2. 移除旧版冲突依赖并拉取最新 MosDNS v5 源码及规则库
 rm -rf feeds/packages/net/mosdns
